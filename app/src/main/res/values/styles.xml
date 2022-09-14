@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:alertDialogTheme">@style/AppTheme.AlertDialogTheme</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:background">#EAEAEA</item>
+    </style>
+
+    <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipCornerRadius">4dp</item>
+        <item name="android:drawable">@drawable/chip_selector</item>
+
+    </style>
+
+    <style name="EditTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/black</item>
+        <item name="colorControlNormal">@color/black</item>
+    </style>
+
+    <style name="EditText" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorAccent">@color/primary</item>
+    </style>
+
+    <!-- 21.12.08 coco -->
+    <style name="AppTheme." parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+    <!-- 21.12.08 coco -->
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/gmarket_medium</item>
+        <item name="colorControlNormal">@color/black</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:actionOverflowButtonStyle">@style/AppTheme.OverFlow</item>
+    </style>
+
+    <style name="AppTheme.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@color/black</item>
+    </style>
+
+    <style name="ToolbarTheme2" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/gmarket_medium</item>
+        <item name="colorControlNormal">@color/black</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="elevation">0dp</item>
+    </style>
+    <style name="ToolbarTheme3" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/noto_regular</item>
+        <item name="android:textSize">14dp</item>
+        <item name="colorControlNormal">@color/black_2929</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="elevation">0dp</item>
+    </style>
+    <style name="ToolbarTheme4" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="colorControlNormal">@color/black</item>
+    </style>
+    <style name="ToolbarTheme5" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="colorControlNormal">@color/black</item>
+        <item name="android:fontFamily">@font/gmarket_medium</item>
+        <item name="android:textSize">17dp</item>
+    </style>
+
+    <style name="tab_txt" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="fontFamily">@font/gmarket_medium</item>
+        <item name="android:textSize">14dp</item>
+        <!--        <item name="android:textColor">@color/black_2929</item>-->
+    </style>
+
+    //상태바 투명하게
+    <style name="Theme.TransparentStatusBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Status bar color. -->
+
+    </style>
+
+    <style name="AppTheme.AlertDialogTheme" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="colorAccent">@color/black_2929</item>
+        <item name="android:textColor">@color/black_2929</item>
+    </style>
+
+
+
+</resources>

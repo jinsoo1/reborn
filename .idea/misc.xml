@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/drawable/chip_bg.xml" value="0.157" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/drawable/ic__back__appbar.xml" value="0.157" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/drawable/ic_gallery_post.xml" value="0.157" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/drawable/ic_stamp_gray.xml" value="0.157" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_image_list.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_recyclerview.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_search_spinner_dropdown_item.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_spinner_item.xml" value="0.358695652173913" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
