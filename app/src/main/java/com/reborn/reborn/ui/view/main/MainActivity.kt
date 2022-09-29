@@ -1,6 +1,8 @@
 package com.reborn.reborn.ui.view.main
 
 import android.os.Bundle
+import android.util.Log
+import com.kakao.sdk.common.util.Utility
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.reborn.reborn.R
