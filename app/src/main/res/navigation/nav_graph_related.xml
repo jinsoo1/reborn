@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_related"
+    app:startDestination="@id/relatedFragment">
+
+    <fragment
+        android:id="@+id/relatedFragment"
+        android:name="com.reborn.reborn.ui.view.main.search.related.RelatedFragment"
+        android:label="RelatedFragment" >
+        <action
+            android:id="@+id/action_relatedFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+        <action
+            android:id="@+id/action_relatedFragment_to_diseaseFragment"
+            app:destination="@id/diseaseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="com.reborn.reborn.ui.view.main.search.related.exercise.ExerciseFragment"
+        android:label="ExerciseFragment" />
+    <fragment
+        android:id="@+id/diseaseFragment"
+        android:name="com.reborn.reborn.ui.view.main.search.related.disease.DiseaseFragment"
+        android:label="DiseaseFragment" />
+</navigation>

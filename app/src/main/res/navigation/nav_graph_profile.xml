@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_profile"
+    app:startDestination="@id/myPageNavFragment">
+
+    <fragment
+        android:id="@+id/myPageNavFragment"
+        android:name="com.reborn.reborn.ui.view.main.myPage.MyPageNavFragment"
+        android:label="MyPageNavFragment" >
+        <action
+            android:id="@+id/action_myPageNavFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_myPageNavFragment_to_informationFragment"
+            app:destination="@id/informationFragment" />
+        <action
+            android:id="@+id/action_myPageNavFragment_to_bookmarkFragment"
+            app:destination="@id/bookmarkFragment" />
+        <action
+            android:id="@+id/action_myPageNavFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.reborn.reborn.ui.view.main.myPage.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/informationFragment"
+        android:name="com.reborn.reborn.ui.view.main.myPage.information.InformationFragment"
+        android:label="InformationFragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="com.reborn.reborn.ui.view.main.myPage.bookmark.BookmarkFragment"
+        android:label="BookmarkFragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.reborn.reborn.ui.view.main.myPage.history.HistoryFragment"
+        android:label="HistoryFragment" >
+    </fragment>
+</navigation>

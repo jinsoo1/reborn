@@ -1,3 +1,82 @@
 <resources>
     <string name="app_name">reborn</string>
+    <string name="HOME">HOME</string>
+    <string name="COMMUNITY">COMMUNITY</string>
+    <string name="MY_PAGE">MY PAGE</string>
+    <string name="exercise_empty_list">현재 진행중인 운동이 없습니다.</string>
+    <string name="exercise_add">맞춤운동을 추가해 보세요!</string>
+    <string name="exercise_search">원하는 운동, 관심질병을 검색해보세요.</string>
+    <string name="exercise_custom_add">맞춤 운동 추가하기</string>
+    <string name="exercise_today_best">오늘의 베스트 운동</string>
+    <string name="feed_today_best">오늘의 베스트 피드</string>
+    <string name="exercise_move">운동 보러가기></string>
+
+    <string name="search_result">검색결과</string>
+
+
+    <string name="exercise_name">운동명칭</string>
+    <string name="exercise_explanation">운동 설명</string>
+    <string name="video">동영상</string>
+    <string name="video_copy">시범영상 따라하기</string>
+    <string name="related_exercise">관련 운동</string>
+    <string name="related_disease">관련질병</string>
+    <string name="disease_explanation">질병 설명</string>
+    <string name="disease">질병명칭(질병코드)</string>
+    <string name="today_exercise_complete">오늘의 운동 완료</string>
+    <string name="routine_name">루틴명</string>
+    <string name="routine_time">전체 진행 시간 : %s분%s초</string>
+    <string name="average_accuracy">평균 진행도 : %d</string>
+    <string name="exercise_time">%s : %s초 %s세트</string>
+    <string name="exercise_start">운동 시작하기</string>
+    <string name="exercise_next">다음</string>
+    <string name="write_next">다음에 작성하기</string>
+    <string name="routine_feedback">프로그램 최적화 피드백</string>
+    <string name="exercise_difficulty">동작하기 어려웠나요?</string>
+    <string name="exercise_repeat">반복 횟수가 많지는 않으셨나요?</string>
+    <string name="exercise_rest">휴식시간이 부족하지는 않으셨나요?</string>
+    <string name="exercise_rating">운동이 마음에 드시나요?</string>
+    <string name="exercise_easy">쉬움</string>
+    <string name="exercise_nomal">괜찮음</string>
+    <string name="exercise_hard">어려움</string>
+    <string name="repeat_few">적음</string>
+    <string name="repeat_many">많음</string>
+
+    <string name="dialog_text">운동 루틴 최적화가\n이루어지지 않았습니다.\n계속하시겠습니까?</string>
+    <string name="dialog_ready">준비 중 입니다.</string>
+    <string name="dialog_close">닫기</string>
+
+    <string name="exercise_complete">운동 프로그램을 완료 했어요!\n운동 효과를 확인해 볼까요?</string>
+    <string name="rating_start">평가 시작하기</string>
+    <string name="home_move">홈으로</string>
+    <string name="continues">이어하기</string>
+
+    <string name="return_list">리스트로 돌아가기</string>
+
+    <string name="routine_list">%s님의 운동 루틴 목록</string>
+    <string name="routine_playtime">소요시간 : %s</string>
+    <string name="routine_date">기간 : %s ~ %s</string>
+
+    <string name="mypage_profile">프로필</string>
+    <string name="mypage_information">개인 정보 수정</string>
+    <string name="mypage_bookmark">즐겨찾기</string>
+    <string name="mypage_history">운동 기록</string>
+    <string name="mypage_terms">이용 약관 및 개인정보처리 방침</string>
+    <string name="mypage_logout">로그아웃</string>
+    
+    <string name="profile_change">프로필 수정</string>
+    <string name="profile_Scope_of_disclosure">공개범위</string>
+    <string name="profile_etc">기타</string>
+
+    <string name="information">개인 정보</string>
+    <string name="information_name">이름</string>
+    <string name="information_gender">성별</string>
+    <string name="information_age">나이</string>
+    <string name="information_weight">체중</string>
+    <string name="information_height">키</string>
+    <string name="information_disease">기저질환</string>
+    <string name="information_past_disease">과거력</string>
+    
+    <string name="bookmark_routine">즐겨찾는 루틴</string>
+    <string name="bookmark_exercise">즐겨찾는 운동</string>
+    
 </resources>

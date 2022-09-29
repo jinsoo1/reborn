@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.reborn.reborn.data.common.model.ExerciseList" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:text="@{item.title}"
+                app:layout_constraintStart_toEndOf="@+id/tv_position"
+                app:layout_constraintTop_toTopOf="@+id/tv_position"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_video"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/bg_rounded_10dp_stroke_gray_bbb"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_position"
+                app:layout_constraintTop_toBottomOf="@id/tv_position">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/video" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_difficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@string/exercise_difficulty"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_video"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_difficulty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_difficulty"
+                android:weightSum="3"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_difficulty_easy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@{item.isDifficulty == 1 ? @drawable/bg_rounded_10dp_blue : @drawable/bg_rounded_10dp_stroke_gray_bbb}"
+                    android:text="@string/exercise_easy"
+                    android:elevation="3dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginEnd="2.5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_difficulty_nomal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@{item.isDifficulty == 2 ? @drawable/bg_rounded_10dp_blue : @drawable/bg_rounded_10dp_stroke_gray_bbb}"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginStart="2.5dp"
+                    android:layout_marginEnd="2.5dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="3dp"
+                    android:text="@string/exercise_nomal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_difficulty_hard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@{item.isDifficulty == 3 ? @drawable/bg_rounded_10dp_blue : @drawable/bg_rounded_10dp_stroke_gray_bbb}"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginStart="2.5dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="3dp"
+                    android:text="@string/exercise_hard"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_repeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@string/exercise_repeat"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_difficulty"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_repeat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_repeat"
+                android:weightSum="3"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_repeat_few"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@{item.isRepeat == 1 ? @drawable/bg_rounded_10dp_blue : @drawable/bg_rounded_10dp_stroke_gray_bbb}"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/repeat_few"
+                    android:elevation="3dp"
+                    android:layout_marginEnd="2.5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_repeat_nomal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@{item.isRepeat == 2 ? @drawable/bg_rounded_10dp_blue : @drawable/bg_rounded_10dp_stroke_gray_bbb}"                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginStart="2.5dp"
+                    android:layout_marginEnd="2.5dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="3dp"
+                    android:text="@string/exercise_nomal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_repeat_many"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@{item.isRepeat == 3 ? @drawable/bg_rounded_10dp_blue : @drawable/bg_rounded_10dp_stroke_gray_bbb}"                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginStart="2.5dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="3dp"
+                    android:text="@string/repeat_many"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_rest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@string/exercise_rest"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_repeat"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_rest"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_rest"
+                android:weightSum="3"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_rest_few"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@{item.isRest == 1 ? @drawable/bg_rounded_10dp_blue : @drawable/bg_rounded_10dp_stroke_gray_bbb}"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/repeat_few"
+                    android:elevation="3dp"
+                    android:layout_marginEnd="2.5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_rest_nomal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@{item.isRest == 2 ? @drawable/bg_rounded_10dp_blue : @drawable/bg_rounded_10dp_stroke_gray_bbb}"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginStart="2.5dp"
+                    android:layout_marginEnd="2.5dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="3dp"
+                    android:text="@string/exercise_nomal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_rest_many"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@{item.isRest == 3 ? @drawable/bg_rounded_10dp_blue : @drawable/bg_rounded_10dp_stroke_gray_bbb}"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginStart="2.5dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="3dp"
+                    android:text="@string/repeat_many"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@string/exercise_rating"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/layout_rest"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rb_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/RatingBar"
+                android:numStars="5"
+                android:stepSize="0.5"
+                android:isIndicator="false"
+                android:secondaryProgressTint="@color/color_kakao"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_rating"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

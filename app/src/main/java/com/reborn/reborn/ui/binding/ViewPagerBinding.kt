@@ -3,17 +3,21 @@ package com.reborn.reborn.ui.binding
 import android.util.Log
 import androidx.databinding.BindingAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.reborn.reborn.R
+import com.reborn.reborn.data.common.model.ExerciseList
+import com.reborn.reborn.util.FeedbackPagerAdapter
 import com.reborn.reborn.util.ImagePagerAdapter
 
-@BindingAdapter(value = ["bindImageToPager", "feedTokens"], requireAll = true)
-fun ViewPager2.bindImageToPager(urls: List<String>?, feedTokens : String) {
-    Log.d("FeedImageList-B", urls.toString())
-    if(this.adapter == null && urls != null) {
-        this.adapter = ImagePagerAdapter(urls)
+@BindingAdapter(value = ["bindFeedbackToPager"], requireAll = true)
+fun ViewPager2.bindFeedbackToPager(item: List<ExerciseList>?) {
+
+    if(this.adapter == null && item != null) {
+        this.adapter = FeedbackPagerAdapter(item)
     }
+
     this.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-    if(urls != null){
-//        (adapter as ImagePagerAdapter?)?.updateItems(urls.map { FeedPagerItem(it, feedTokens) })
+    if(item != null){
+        (adapter as FeedbackPagerAdapter?)?.updateItems(item)
     }
 
 }
