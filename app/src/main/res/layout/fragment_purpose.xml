@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.reborn.reborn.ui.view.assessment.purpose.PurposeViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@color/primary"
+            android:elevation="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/assessment_purpose"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/white"
+                android:textSize="22dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"
+            android:text="@string/assessment_purpose_title"
+            android:textSize="22dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/btn_rehab"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/back_stroke_radius_5dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:elevation="4dp"
+                android:text="@string/assessment_purpose_btn_1"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="40dp"
+                android:onClick="@{() -> vm.nextRehab()}"/>
+
+            <TextView
+                android:id="@+id/btn_muscle"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/back_stroke_radius_5dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:elevation="4dp"
+                android:text="@string/assessment_purpose_btn_2"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:onClick="@{() -> vm.nextMuscle()}"/>
+
+            <TextView
+                android:id="@+id/btn_correct"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/back_stroke_radius_5dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:elevation="4dp"
+                android:text="@string/assessment_purpose_btn_3"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:onClick="@{() -> vm.nextCorrect()}"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@color/primary"
+            android:gravity="center"
+            android:elevation="4dp"
+            android:text="@string/program_stop"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="22dp"
+            android:onClick="@{() -> vm.stop()}"/>
+
+    </LinearLayout>
+
+</layout>

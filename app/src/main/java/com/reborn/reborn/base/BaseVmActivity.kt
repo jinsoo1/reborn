@@ -15,11 +15,13 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
 import com.reborn.reborn.BR
 import com.reborn.reborn.R
+import com.reborn.reborn.ui.view.login.LoginViewModel
+import com.reborn.reborn.ui.view.main.MainViewModel
 import org.koin.android.viewmodel.compat.ViewModelCompat.viewModel
 
 abstract class BaseVmActivity<T : ViewDataBinding>(
-    @LayoutRes val layoutRes : Int,
-    cls : Class<out ViewModel>
+    @LayoutRes val layoutRes: Int,
+    cls: Class<out ViewModel>
 ) : AppCompatActivity() {
 
     val vm by viewModel(this, cls)
