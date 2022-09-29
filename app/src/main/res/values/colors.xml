@@ -49,10 +49,9 @@
 
     //new
     <color name="black">#000000</color>
-    <color name="primary">#00A3FF</color>
+    <color name="primary">#5982F6</color>
     <color name="primary_second">#A0DDFF</color>
     <color name="hotplace_txt">#191919</color>
-    <color name="chat_txt_color">#666666</color>
     <color name="my_chat_txt_color">#666666</color>
     <color name="grey_999">#999999</color>
     <color name="grey_666">#666666</color>
@@ -68,5 +67,8 @@
     <color name="black_1919">#191919</color>
     <color name="black_30">#4D000000</color>
     <color name="black_09">#090909</color>
+    <color name="grey_7d">#7D7D7D</color>
     <color name="push_color">#F2FAFF</color>
+    <color name="grey_c4">#C4C4C4</color>
+    <color name="second_primary">#CCD2E3</color>
 </resources>

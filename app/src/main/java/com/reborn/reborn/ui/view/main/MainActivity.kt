@@ -52,6 +52,9 @@ class MainActivity : BaseVmActivity<ActivityMainBinding>(
 
 
 
+        val keyHash = Utility.getKeyHash(this)
+        Log.d("HASH!", keyHash)
+
     }
 
     private fun MainViewModel.setObserves(){
