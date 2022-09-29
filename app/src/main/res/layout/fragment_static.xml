@@ -43,6 +43,7 @@
 
         </LinearLayout>
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -94,6 +95,8 @@
                 android:textSize="16dp"
                 android:gravity="center"
                 android:background="@drawable/btn_next_primary"/>
+
+
 
         </LinearLayout>
 
