@@ -4,6 +4,7 @@ import androidx.lifecycle.Observer
 import com.reborn.reborn.R
 import com.reborn.reborn.base.BaseVmActivity
 import com.reborn.reborn.databinding.ActivitySearchresultBinding
+import com.reborn.reborn.ui.view.main.search.related.exercise.ExerciseFragment
 
 
 class SearchResultActivity : BaseVmActivity<ActivitySearchresultBinding>(
@@ -17,6 +18,10 @@ class SearchResultActivity : BaseVmActivity<ActivitySearchresultBinding>(
 
 
         viewModel.setObserves()
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, ExerciseFragment.newInstance())
+            .commitNow()
 
     }
 

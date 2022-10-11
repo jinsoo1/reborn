@@ -6,8 +6,11 @@ import androidx.navigation.fragment.navArgs
 import com.reborn.reborn.R
 import com.reborn.reborn.base.BaseVmFragment
 import com.reborn.reborn.databinding.FragmentPurposeBinding
+import com.reborn.reborn.ui.view.account.AccountViewModel
+import com.reborn.reborn.ui.view.account.height.HeightViewModel
 import com.reborn.reborn.ui.view.assessment.AssessmentViewModel
 import com.reborn.reborn.util.EventObserver
+import com.reborn.reborn.util.dialog.ReadyDialog
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class PurposeFragment: BaseVmFragment<FragmentPurposeBinding>(
@@ -42,19 +45,25 @@ class PurposeFragment: BaseVmFragment<FragmentPurposeBinding>(
                 PurposeViewModel.PurposeActions.MUSCLE -> { //근력 운동
 //                    activityViewModel.clickMuscle()
 
-                    val action = PurposeFragmentDirections.actionPurposeFragmentToRehabCodeFragment()
-                    findNavController().navigate(action)
+//                    val action = PurposeFragmentDirections.actionPurposeFragmentToRehabCodeFragment()
+//                    findNavController().navigate(action)
+//
+//                    activityViewModel.purposeData.value = "근력 운동"
 
-                    activityViewModel.purposeData.value = "근력 운동"
+                    val dialog = ReadyDialog()
+                    dialog.show(requireActivity().supportFragmentManager, "")
 
                 }
 
                 PurposeViewModel.PurposeActions.CORRECT -> { //교정 운동
 //                    activityViewModel.clickCorrect()
-                    val action = PurposeFragmentDirections.actionPurposeFragmentToRehabCodeFragment()
-                    findNavController().navigate(action)
+//                    val action = PurposeFragmentDirections.actionPurposeFragmentToRehabCodeFragment()
+//                    findNavController().navigate(action)
+//
+//                    activityViewModel.purposeData.value = "교정 운동"
 
-                    activityViewModel.purposeData.value = "교정 운동"
+                    val dialog = ReadyDialog()
+                    dialog.show(requireActivity().supportFragmentManager, "")
 
                 }
 

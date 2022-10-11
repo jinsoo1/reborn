@@ -22,25 +22,19 @@
         android:theme="@style/Theme.Reborn"
         tools:targetApi="31">
         <activity
-            android:name=".ui.view.account.AccountActivity">
+            android:name=".ui.view.account.AccountActivity"
+            >
 
         </activity>
-        <activity android:name=".ui.view.main.MainActivity"
-          >
-
-
-        </activity>
+        <activity android:name=".ui.view.main.MainActivity"/>
         <activity
-            android:name=".ui.view.login.LoginActivity"
-           >
-
+            android:name=".ui.view.login.LoginActivity">
 
         </activity>
 
         <activity
             android:name=".ui.view.assessment.AssessmentActivity"
-            android:exported="true">
-
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,6 +48,7 @@
         </activity>
         <activity android:name="com.reborn.reborn.ui.view.main.search.SearchResultActivity"/>
         <activity android:name=".ui.view.myroutine.MyRoutineActivity"/>
+        <activity android:name=".ui.view.main.search.related.RelatedActivity"/>
     </application>
 
 </manifest>

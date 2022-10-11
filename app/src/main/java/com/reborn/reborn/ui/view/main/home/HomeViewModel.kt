@@ -9,10 +9,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.reborn.reborn.base.BaseViewModel
 import com.reborn.reborn.data.common.model.TodayBestExercise
 import com.reborn.reborn.data.common.model.TodayBestFeed
+import com.reborn.reborn.util.Event
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class HomeViewModel : BaseViewModel() {
+
+
+    private val _action : MutableLiveData<Event<HomeAction>> = MutableLiveData()
+    val action  : MutableLiveData<Event<HomeAction>> get() = _action
 
     private val _todayBestExercise : MutableLiveData<List<TodayBestExercise>> = MutableLiveData(listOf())
     val todayBestExercise : LiveData<List<TodayBestExercise>> get() = _todayBestExercise
@@ -60,6 +65,16 @@ class HomeViewModel : BaseViewModel() {
 
         _todayBaseFeed.value = itemList
 
+    }
+
+
+    fun addAssessment(){
+        _action.value = Event(HomeAction.ASSESSMENT)
+    }
+
+
+    enum class HomeAction{
+        ASSESSMENT
     }
 
 
