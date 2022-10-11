@@ -8,7 +8,9 @@ import com.reborn.reborn.data.common.model.TodayBestFeed
 import com.reborn.reborn.databinding.FragmentHomeBinding
 import com.reborn.reborn.databinding.ItemBestExerciseBinding
 import com.reborn.reborn.databinding.ItemBestFeedBinding
+import com.reborn.reborn.ui.view.assessment.AssessmentActivity
 import com.reborn.reborn.ui.view.myroutine.MyRoutineActivity
+import com.reborn.reborn.util.EventObserver
 import org.jetbrains.anko.support.v4.intentFor
 
 class HomeFragment : BaseVmFragment<FragmentHomeBinding>(
@@ -39,8 +41,26 @@ class HomeFragment : BaseVmFragment<FragmentHomeBinding>(
         }
 
 
+        viewModel.setObserves()
+
+
 
     }
+
+    private fun HomeViewModel.setObserves(){
+
+        action.observe(this@HomeFragment, EventObserver{
+            when(it){
+                HomeViewModel.HomeAction.ASSESSMENT -> {
+                    startActivity(
+                        intentFor<AssessmentActivity>()
+                    )
+                }
+            }
+        })
+
+    }
+
 
 }
 

@@ -3,17 +3,32 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/drawable/bg_rounded_10dp_stroke_gray_bbb.xml" value="0.1955" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/drawable/chip_bg.xml" value="0.157" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/drawable/ic__back__appbar.xml" value="0.157" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/drawable/ic_gallery_post.xml" value="0.157" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/drawable/ic_stamp_gray.xml" value="0.157" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/activity_account.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/activity_assessment.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/activity_login.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/activity_related.xml" value="0.2" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/activity_searchresult.xml" value="0.16" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_code.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_disease.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_exercise.xml" value="0.16" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_height.xml" value="0.1875" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_home.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_purpose.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_routine_list.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_spot.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_spot_location.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_static.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_image_list.xml" value="0.358695652173913" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_recyclerview.xml" value="0.358695652173913" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_search_spinner_dropdown_item.xml" value="0.358695652173913" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_spinner_item.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/view_prnd_you_tube_player.xml" value="0.1875" />
       </map>
     </option>
   </component>

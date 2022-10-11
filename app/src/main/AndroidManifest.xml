@@ -23,7 +23,7 @@
             >
 
         </activity>
-        <activity android:name=".ui.view.main.MainActivity"></activity>
+        <activity android:name=".ui.view.main.MainActivity"/>
         <activity
             android:name=".ui.view.login.LoginActivity">
 
@@ -41,6 +41,7 @@
         </activity>
         <activity android:name="com.reborn.reborn.ui.view.main.search.SearchResultActivity"/>
         <activity android:name=".ui.view.myroutine.MyRoutineActivity"/>
+        <activity android:name=".ui.view.main.search.related.RelatedActivity"/>
     </application>
 
 </manifest>

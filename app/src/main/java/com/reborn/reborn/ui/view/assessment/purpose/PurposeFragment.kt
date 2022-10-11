@@ -8,6 +8,7 @@ import com.reborn.reborn.ui.view.account.AccountViewModel
 import com.reborn.reborn.ui.view.account.height.HeightViewModel
 import com.reborn.reborn.ui.view.assessment.AssessmentViewModel
 import com.reborn.reborn.util.EventObserver
+import com.reborn.reborn.util.dialog.ReadyDialog
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class PurposeFragment: BaseVmFragment<FragmentPurposeBinding>(
@@ -35,18 +36,21 @@ class PurposeFragment: BaseVmFragment<FragmentPurposeBinding>(
                 }
 
                 PurposeViewModel.PurposeActions.MUSCLE -> {
-                    activityViewModel.clickMuscle()
+                    //activityViewModel.clickMuscle()
+                    val dialog = ReadyDialog()
+                    dialog.show(requireActivity().supportFragmentManager, "")
 
                 }
 
                 PurposeViewModel.PurposeActions.CORRECT -> {
-                    activityViewModel.clickCorrect()
+                    //activityViewModel.clickCorrect()
+                    val dialog = ReadyDialog()
+                    dialog.show(requireActivity().supportFragmentManager, "")
 
                 }
 
                 PurposeViewModel.PurposeActions.STOP -> {
                     activityViewModel.finish()
-
                 }
             }
         })
