@@ -11,13 +11,16 @@ class StaticViewModel: BaseViewModel() {
     fun prev(){
         action.value = Event(StaticActions.PREV)
     }
+    fun next(){
+        action.value = Event(StaticActions.NEXT)
+    }
 
     fun stop(){
         action.value = Event(StaticActions.STOP)
     }
 
     enum class StaticActions {
-        PREV, STOP
+        PREV, STOP, NEXT
     }
 
 }

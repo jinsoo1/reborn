@@ -11,6 +11,13 @@ class AssessmentViewModel
 
     val action: MutableLiveData<Event<AssessmentAction>> = MutableLiveData()
 
+    val purposeData: MutableLiveData<String> = MutableLiveData()
+    val codeData: MutableLiveData<String> = MutableLiveData()
+    val spotData: MutableLiveData<String> = MutableLiveData()
+    val spotLocationData: MutableLiveData<String> = MutableLiveData()
+    val staticData: MutableLiveData<String> = MutableLiveData()
+    val dynamicData: MutableLiveData<String> = MutableLiveData()
+
     fun clickRehab(){
         action.value = Event(AssessmentAction.CLICK_REHAB)
 

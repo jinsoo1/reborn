@@ -17,6 +17,10 @@ class CodeViewModel : BaseViewModel() {
         action.value = Event(CodeActions.PREV)
     }
 
+    fun btnCodeInput(){
+        action.value = Event(CodeActions.CODEINPUT)
+    }
+
     fun btnNone(){
         action.value = Event(CodeActions.NONE)
     }
@@ -27,6 +31,6 @@ class CodeViewModel : BaseViewModel() {
 
 
     enum class CodeActions {
-        NEXT, PREV, NONE, STOP
+        NEXT, PREV, NONE, STOP, CODEINPUT
     }
 }

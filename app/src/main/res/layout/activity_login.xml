@@ -4,6 +4,12 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.reborn.reborn.ui.view.login.LoginViewModel" />
+
+        <import type="android.view.View" />
+
     </data>
 
     <LinearLayout
@@ -45,8 +51,9 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:background="@drawable/kakao_login_button"
-            android:layout_marginTop="50dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="60dp"
+            android:orientation="horizontal"
+            android:onClick="@{()-> vm.kakaoLogin()}">
 
             <ImageView
                 android:layout_width="22dp"

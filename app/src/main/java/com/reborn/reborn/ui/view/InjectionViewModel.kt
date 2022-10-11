@@ -6,6 +6,7 @@ import com.reborn.reborn.ui.view.account.experience.ExperienceViewModel
 import com.reborn.reborn.ui.view.account.height.HeightViewModel
 import com.reborn.reborn.ui.view.account.weight.WeightViewModel
 import com.reborn.reborn.ui.view.assessment.AssessmentViewModel
+import com.reborn.reborn.ui.view.assessment.analysis.ProgressViewModel
 import com.reborn.reborn.ui.view.assessment.purpose.PurposeViewModel
 import com.reborn.reborn.ui.view.assessment.rehab.CodeViewModel
 import com.reborn.reborn.ui.view.assessment.rehab.SpotLocationViewModel
@@ -76,6 +77,7 @@ val viewModelModule = module {
     viewModel { SpotLocationViewModel() }
     viewModel { StaticViewModel() }
     viewModel { DynamicViewModel() }
+    viewModel { ProgressViewModel() }
 
 
 

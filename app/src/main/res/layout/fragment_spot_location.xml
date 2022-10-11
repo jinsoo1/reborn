@@ -5,7 +5,11 @@
     <data>
         <variable
             name="vm"
-            type="com.reborn.reborn.ui.view.assessment.rehab.SpotLocationViewModel" />
+            type="com.reborn.reborn.ui.view.assessment.rehab.SpotLocationViewModel"/>
+
+        <variable
+            name="item"
+            type="com.reborn.reborn.data.common.model.SpotLocation" />
 
         <import type="android.view.View" />
     </data>
@@ -44,16 +48,16 @@
 
         </LinearLayout>
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/black"
-            android:text="@string/assessment_spot1_title"
-            android:textSize="22dp"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"/>
-
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/assessment_spot_location_title"
+            android:textColor="@color/black"
+            android:textSize="22dp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -65,9 +69,11 @@
             android:layout_marginTop="10dp">
 
             <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/locationPager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                android:overScrollMode="never"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -95,6 +101,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:id="@+id/indicator_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
@@ -114,6 +121,7 @@
             android:layout_marginTop="20dp">
 
             <TextView
+                android:id="@+id/btn1"
                 android:layout_width="54dp"
                 android:layout_height="54dp"
                 android:text="1"
@@ -122,8 +130,12 @@
                 android:textSize="24dp"
                 android:textColor="@color/grey_7d"
                 android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:onClick="@{() -> vm.click1(item)}"
+                />
             <TextView
+                android:id="@+id/btn2"
                 android:layout_width="54dp"
                 android:layout_height="54dp"
                 android:text="2"
@@ -132,8 +144,11 @@
                 android:textSize="24dp"
                 android:textColor="@color/grey_7d"
                 android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:onClick="@{() -> vm.click2(item)}"/>
             <TextView
+                android:id="@+id/btn3"
                 android:layout_width="54dp"
                 android:layout_height="54dp"
                 android:text="3"
@@ -142,8 +157,11 @@
                 android:textSize="24dp"
                 android:textColor="@color/grey_7d"
                 android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:onClick="@{() -> vm.click3(item)}"/>
             <TextView
+                android:id="@+id/btn4"
                 android:layout_width="54dp"
                 android:layout_height="54dp"
                 android:text="4"
@@ -152,7 +170,9 @@
                 android:textSize="24dp"
                 android:textColor="@color/grey_7d"
                 android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:onClick="@{() -> vm.click4(item)}"/>
 
         </LinearLayout>
 
@@ -165,6 +185,7 @@
             android:layout_marginTop="10dp">
 
             <TextView
+                android:id="@+id/btn5"
                 android:layout_width="54dp"
                 android:layout_height="54dp"
                 android:text="5"
@@ -173,8 +194,11 @@
                 android:textSize="24dp"
                 android:textColor="@color/grey_7d"
                 android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:onClick="@{() -> vm.click5(item)}"/>
             <TextView
+                android:id="@+id/btn6"
                 android:layout_width="54dp"
                 android:layout_height="54dp"
                 android:text="6"
@@ -183,8 +207,11 @@
                 android:textSize="24dp"
                 android:textColor="@color/grey_7d"
                 android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:onClick="@{() -> vm.click6(item)}"/>
             <TextView
+                android:id="@+id/btn7"
                 android:layout_width="54dp"
                 android:layout_height="54dp"
                 android:text="7"
@@ -193,8 +220,11 @@
                 android:textSize="24dp"
                 android:textColor="@color/grey_7d"
                 android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:onClick="@{() -> vm.click7(item)}"/>
             <TextView
+                android:id="@+id/btn8"
                 android:layout_width="54dp"
                 android:layout_height="54dp"
                 android:text="8"
@@ -203,7 +233,9 @@
                 android:textSize="24dp"
                 android:textColor="@color/grey_7d"
                 android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:onClick="@{() -> vm.click8(item)}"/>
 
         </LinearLayout>
 

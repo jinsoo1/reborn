@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_assessment"
+    app:startDestination="@id/fragment_purpose">
+
+    <fragment
+        android:id="@+id/fragment_purpose"
+        android:name="com.reborn.reborn.ui.view.assessment.purpose.PurposeFragment"
+        android:label="fragment_1"
+        tools:layout="@layout/fragment_purpose">
+
+<!--        <argument-->
+<!--            android:name="purposeToken"-->
+<!--            app:argType="string"-->
+<!--            />-->
+
+        <action
+            android:id="@+id/action_purposeFragment_to_rehabCodeFragment"
+            app:destination="@+id/fragment_code"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_code"
+        android:name="com.reborn.reborn.ui.view.assessment.rehab.CodeFragment"
+        android:label="fragment_2"
+        tools:layout="@layout/fragment_code">
+
+<!--        <argument-->
+<!--            android:name="codeToken"-->
+<!--            app:argType="string"-->
+<!--            />-->
+
+        <action
+            android:id="@+id/action_codeFragment_to_spotFragment"
+            app:destination="@+id/fragment_spot"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_spot"
+        android:name="com.reborn.reborn.ui.view.assessment.rehab.SpotFragment"
+        android:label="fragment_3"
+        tools:layout="@layout/fragment_spot">
+
+<!--        <argument-->
+<!--            android:name="spotToken"-->
+<!--            app:argType="string"-->
+<!--            />-->
+
+        <action
+            android:id="@+id/action_spotFragment_to_spotLocationFragment"
+            app:destination="@+id/fragment_spot_location"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_spot_location"
+        android:name="com.reborn.reborn.ui.view.assessment.rehab.SpotLocationFragment"
+        android:label="fragment_4"
+        tools:layout="@layout/fragment_spot_location">
+
+<!--        <argument-->
+<!--            android:name="spotLocationToken"-->
+<!--            app:argType="string"-->
+<!--            />-->
+
+        <action
+            android:id="@+id/action_spotLocationFragment_to_staticFragment"
+            app:destination="@+id/fragment_static"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_static"
+        android:name="com.reborn.reborn.ui.view.assessment.vas.StaticFragment"
+        android:label="fragment_5"
+        tools:layout="@layout/fragment_static">
+
+<!--        <argument-->
+<!--            android:name="staticToken"-->
+<!--            app:argType="string"-->
+<!--            />-->
+
+        <action
+            android:id="@+id/action_staticFragment_to_dynamicFragment"
+            app:destination="@+id/fragment_dynamic"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_dynamic"
+        android:name="com.reborn.reborn.ui.view.assessment.vas.DynamicFragment"
+        android:label="fragment_6"
+        tools:layout="@layout/fragment_dynamic">
+
+<!--        <argument-->
+<!--            android:name="dynamicToken"-->
+<!--            app:argType="string"-->
+<!--            />-->
+
+        <action
+            android:id="@+id/action_dynamicFragment_to_analysisProgressFragment"
+            app:destination="@+id/fragment_analysis_progress"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_analysis_progress"
+        android:name="com.reborn.reborn.ui.view.assessment.analysis.ProgressFragment"
+        android:label="fragment_7"
+        tools:layout="@layout/fragment_analysis_progress"/>
+
+</navigation>

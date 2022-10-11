@@ -1,11 +1,11 @@
 package com.reborn.reborn.ui.view.assessment.vas
 
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.reborn.reborn.R
 import com.reborn.reborn.base.BaseVmFragment
 import com.reborn.reborn.databinding.FragmentStaticBinding
 import com.reborn.reborn.ui.view.assessment.AssessmentViewModel
-import com.reborn.reborn.ui.view.assessment.rehab.SpotLocationViewModel
-import com.reborn.reborn.ui.view.assessment.rehab.SpotViewModel
 import com.reborn.reborn.util.EventObserver
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
@@ -32,8 +32,12 @@ class StaticFragment : BaseVmFragment<FragmentStaticBinding>(
                 StaticViewModel.StaticActions.STOP -> {
                 activityViewModel.finish()
                 }
+                StaticViewModel.StaticActions.NEXT -> {
+                    val actionRehab = StaticFragmentDirections.actionStaticFragmentToDynamicFragment()
+                    findNavController().navigate(actionRehab)
+
+                }
             }
         })
     }
-
 }

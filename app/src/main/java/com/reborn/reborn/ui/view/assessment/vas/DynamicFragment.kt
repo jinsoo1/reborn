@@ -1,5 +1,7 @@
 package com.reborn.reborn.ui.view.assessment.vas
 
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.reborn.reborn.R
 import com.reborn.reborn.base.BaseVmFragment
 import com.reborn.reborn.databinding.FragmentDynamicBinding
@@ -28,6 +30,10 @@ class DynamicFragment: BaseVmFragment<FragmentDynamicBinding>(
             when (it) {
                 DynamicViewModel.DynamicActions.PREV -> {
                     activityViewModel.staticPrev()
+                }
+                DynamicViewModel.DynamicActions.NEXT -> {
+                    val action = DynamicFragmentDirections.actionDynamicFragmentToAnalysisProgressFragment()
+                    findNavController().navigate(action)
                 }
                 DynamicViewModel.DynamicActions.STOP -> {
                     activityViewModel.finish()

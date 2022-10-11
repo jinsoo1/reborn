@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
             android:textColor="@color/primary"
-            android:text="@string/static_title"
+            android:text="@string/dynamic_title"
             android:textSize="22dp"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"/>
@@ -80,6 +80,7 @@
                 android:textColor="@color/white"
                 android:textSize="16dp"
                 android:gravity="center"
+                android:onClick="@{() -> vm.prev()}"
                 android:background="@drawable/btn_previous_primary"/>
 
 
@@ -93,6 +94,7 @@
                 android:textColor="@color/white"
                 android:textSize="16dp"
                 android:gravity="center"
+                android:onClick="@{() -> vm.stop()}"
                 android:background="@drawable/btn_next_primary"/>
 
         </LinearLayout>

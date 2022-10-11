@@ -81,6 +81,7 @@
                 android:textColor="@color/white"
                 android:textSize="16dp"
                 android:gravity="center"
+                android:onClick="@{() -> vm.prev()}"
                 android:background="@drawable/btn_previous_primary"/>
 
 
@@ -94,6 +95,7 @@
                 android:textColor="@color/white"
                 android:textSize="16dp"
                 android:gravity="center"
+                android:onClick="@{() -> vm.prev()}"
                 android:background="@drawable/btn_next_primary"/>
 
 

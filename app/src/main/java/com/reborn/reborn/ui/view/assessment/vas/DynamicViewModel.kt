@@ -11,12 +11,16 @@ class DynamicViewModel: BaseViewModel() {
     fun prev(){
         action.value = Event(DynamicActions.PREV)
     }
+    fun next(){
+        action.value = Event(DynamicActions.NEXT)
+    }
 
     fun stop(){
         action.value = Event(DynamicActions.STOP)
     }
 
     enum class DynamicActions {
-        PREV, STOP
+        PREV, STOP, NEXT
     }
 }
+

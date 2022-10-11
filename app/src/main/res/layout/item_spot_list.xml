@@ -7,6 +7,11 @@
             name="item"
             type="com.reborn.reborn.data.common.model.Spot" />
 
+        <variable
+            name="vm"
+            type="com.reborn.reborn.ui.view.assessment.rehab.SpotViewModel" />
+
+
         <import type="android.view.View" />
 
     </data>
