@@ -1,7 +1,7 @@
 package com.reborn.reborn.ui.view.assessment.vas
 
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.reborn.reborn.R
 import com.reborn.reborn.base.BaseVmFragment
 import com.reborn.reborn.databinding.FragmentStaticBinding
@@ -27,17 +27,23 @@ class StaticFragment : BaseVmFragment<FragmentStaticBinding>(
         action.observe(viewLifecycleOwner, EventObserver {
             when (it) {
                 StaticViewModel.StaticActions.PREV -> {
-                    activityViewModel.staticPrev()
+                    requireActivity().onBackPressed()
                 }
                 StaticViewModel.StaticActions.STOP -> {
-                activityViewModel.finish()
+                    activityViewModel.finish()
                 }
                 StaticViewModel.StaticActions.NEXT -> {
                     val actionRehab = StaticFragmentDirections.actionStaticFragmentToDynamicFragment()
                     findNavController().navigate(actionRehab)
-
                 }
             }
         })
+
+        num.observe(this@StaticFragment, Observer{
+            activityViewModel.staticData.value = it
+        })
+
     }
+
+
 }

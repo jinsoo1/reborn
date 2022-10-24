@@ -15,6 +15,9 @@ class ExperienceViewModel(
     val intermediateState: MutableLiveData<Boolean> = MutableLiveData(false) //false 클릭 안된 상태 true 클릭된 상태
     val advancedState: MutableLiveData<Boolean> = MutableLiveData(false) //false 클릭 안된 상태 true 클릭된 상태
 
+    private val _btnState : MutableLiveData<Boolean> = MutableLiveData(false)
+    val btnState : MutableLiveData<Boolean> get() = _btnState
+
 
     fun nextTerms(){
         action.value = Event(ExperienceActions.NEXT)
@@ -30,6 +33,10 @@ class ExperienceViewModel(
 
     fun clickAdvanced(){
         action.value = Event(ExperienceActions.ADVANCED)
+    }
+
+    fun btnEnabled(){
+        _btnState.value = true
     }
 
 

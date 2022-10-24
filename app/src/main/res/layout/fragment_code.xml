@@ -75,6 +75,7 @@
                 android:textColor="@color/black"
                 android:paddingLeft="30dp"
                 android:layout_marginTop="40dp"
+                android:text="@={vm.codeText}"
                 android:onClick="@{() -> vm.btnCodeInput()}"/>
 
             <TextView
@@ -120,6 +121,7 @@
 
 
             <TextView
+                android:id="@+id/btn_next"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:elevation="4dp"
@@ -130,7 +132,7 @@
                 android:textSize="16dp"
                 android:gravity="center"
                 android:onClick="@{() -> vm.next()}"
-                android:background="@drawable/btn_next_primary"/>
+                android:background="@{vm.btnState == true ? @drawable/btn_next_primary : @drawable/btn_next_gray}"/>
 
         </LinearLayout>
 

@@ -9,15 +9,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.LinearLayout
 import com.reborn.reborn.R
-import kotlinx.android.synthetic.main.numberpicker_horizontal.view.tvNumberPicker
-import kotlinx.android.synthetic.main.numberpicker_horizontal.view.tvPickerLeft1
-import kotlinx.android.synthetic.main.numberpicker_horizontal.view.tvPickerLeft2
-import kotlinx.android.synthetic.main.numberpicker_horizontal.view.tvPickerLeft3
-import kotlinx.android.synthetic.main.numberpicker_horizontal.view.tvPickerLeft4
-import kotlinx.android.synthetic.main.numberpicker_horizontal.view.tvPickerRight1
-import kotlinx.android.synthetic.main.numberpicker_horizontal.view.tvPickerRight2
-import kotlinx.android.synthetic.main.numberpicker_horizontal.view.tvPickerRight3
-import kotlinx.android.synthetic.main.numberpicker_horizontal.view.tvPickerRight4
+import kotlinx.android.synthetic.main.numberpicker_horizontal.view.*
 import kotlin.math.abs
 
 class SazibNumberPicker(
@@ -28,6 +20,10 @@ class SazibNumberPicker(
   private var onSwipeTouchListener: OnSwipeTouchListener
   private var min = 0
   private var max = 0
+
+  private fun setType(value : String){
+    tvAppCompatTextView.text = value
+  }
 
   private fun calculateNumber(value: Int) {
 
@@ -40,6 +36,58 @@ class SazibNumberPicker(
     tvPickerRight2.text = "${value + 2}"
     tvPickerRight3.text = "${value + 3}"
     tvPickerRight4.text = "${value + 4}"
+
+    when(value){
+      130 -> {
+        tvPickerLeft4.visibility = GONE
+        tvPickerLeft3.visibility = GONE
+        tvPickerLeft2.visibility = GONE
+        tvPickerLeft1.visibility = GONE
+      }
+      131 ->{
+        tvPickerLeft4.visibility = GONE
+        tvPickerLeft3.visibility = GONE
+        tvPickerLeft2.visibility = GONE
+        tvPickerLeft1.visibility = VISIBLE
+      }
+      132 ->{
+        tvPickerLeft4.visibility = GONE
+        tvPickerLeft3.visibility = GONE
+        tvPickerLeft2.visibility = VISIBLE
+        tvPickerLeft1.visibility = VISIBLE
+      }
+
+      198 ->{
+        tvPickerRight1.visibility = VISIBLE
+        tvPickerRight2.visibility = VISIBLE
+        tvPickerRight3.visibility = GONE
+        tvPickerRight4.visibility = GONE
+      }
+      199 ->{
+        tvPickerRight1.visibility = VISIBLE
+        tvPickerRight2.visibility = GONE
+        tvPickerRight3.visibility = GONE
+        tvPickerRight4.visibility = GONE
+      }
+      200 ->{
+        tvPickerRight1.visibility = GONE
+        tvPickerRight2.visibility = GONE
+        tvPickerRight3.visibility = GONE
+        tvPickerRight4.visibility = GONE
+      }
+      else ->{
+        tvPickerLeft1.visibility = VISIBLE
+        tvPickerLeft2.visibility = VISIBLE
+        tvPickerLeft3.visibility = VISIBLE
+        tvPickerLeft4.visibility = VISIBLE
+        tvPickerRight1.visibility = VISIBLE
+        tvPickerRight2.visibility = VISIBLE
+        tvPickerRight3.visibility = VISIBLE
+        tvPickerRight4.visibility = VISIBLE
+      }
+
+
+    }
   }
 
   /***
@@ -179,8 +227,20 @@ class SazibNumberPicker(
       OnSwipeTouchListener(
           getContext(),
           object : Callback {
-            override fun swipeRight() = calculateNumber(value - 1)
-            override fun swipeLeft() = calculateNumber(value + 1)
+            override fun swipeRight(){
+              if(value == 130) {
+                value = 130
+              }else{
+                calculateNumber(value - 1)
+              }
+            }
+            override fun swipeLeft(){
+              if(value == 200) {
+                value = 200
+              }else{
+                calculateNumber(value + 1)
+              }
+            }
           }, findViewById(R.id.layoutNumberPicker)
       )
   }

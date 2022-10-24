@@ -1,11 +1,13 @@
 package com.reborn.reborn.data.common
 
 import android.util.Log
-import androidx.databinding.ktx.BuildConfig
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser
+import com.reborn.reborn.BuildConfig
 import com.reborn.reborn.data.common.interceptor.ErrorInterceptor
 import com.reborn.reborn.data.common.interceptor.HeaderInterceptor
+import com.reborn.reborn.data.remote.api.*
+import com.reborn.reborn.data.remote.source.PainDataSource
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,9 +15,9 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 
 val networkModule = module {
-
 
     single {
         HttpLoggingInterceptor(LoggerInterceptor()).apply {
@@ -43,6 +45,7 @@ val networkModule = module {
             .addInterceptor(get<HttpLoggingInterceptor>())
             .addInterceptor(get<HeaderInterceptor>())
             .addInterceptor(get<ErrorInterceptor>())
+            .build()
     }
 
     single { RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()) }
@@ -51,14 +54,19 @@ val networkModule = module {
 
     single {
         Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl(BuildConfig.BASE_URL)
             .client(get<OkHttpClient>())
             .addCallAdapterFactory(get<RxJava2CallAdapterFactory>())
             .addConverterFactory(get<GsonConverterFactory>())
             .build()
     }
 
-
+    single<AuthApi> { get<Retrofit>().create(AuthApi::class.java) }
+    single<UserApi> { get<Retrofit>().create(UserApi::class.java) }
+    single<PainApi> { get<Retrofit>().create(PainApi::class.java) }
+    single<SearchApi>{ get<Retrofit>().create(SearchApi::class.java)}
+    single<RoutineApi> { get<Retrofit>().create(RoutineApi::class.java) }
+    single<ExerciseApi> { get<Retrofit>().create(ExerciseApi::class.java) }
 
 
 }

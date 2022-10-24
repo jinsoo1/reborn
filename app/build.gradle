@@ -16,16 +16,53 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        signingConfig signingConfigs.debug
+    }
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    signingConfigs {
+        release {
+            keyAlias 'reborn'
+            keyPassword 'reborn'
+            storeFile rootProject.file("key/reborn.jks")
+            storePassword 'reborn'
+        }
+
+        debug {
+            keyAlias 'reborn'
+            keyPassword 'reborn'
+            storeFile rootProject.file("key/reborn.jks")
+            storePassword 'reborn'
+        }
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "server"
+    productFlavors {
+        dev {
+            dimension = "server"
+            applicationIdSuffix ".dev"
+            buildConfigField 'String', 'BASE_URL', '"https://api.rebornribbon.com"'
+        }
+
+        prod {
+            dimension = "server"
+            buildConfigField 'String', 'BASE_URL', '"https://api.rebornribbon.com"'
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -37,6 +74,10 @@ android {
     buildFeatures {
         dataBinding = true
         viewBinding = true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
@@ -77,6 +118,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.firebase:firebase-dynamic-links-ktx:21.0.0'
     implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation 'com.google.android.gms:play-services-auth:20.3.0'
     kapt "com.github.bumptech.glide:compiler:$glide"
 
     //androidx
@@ -116,6 +158,7 @@ dependencies {
     implementation 'com.shobhitpuri.custombuttons:google-signin:1.1.0'
     //카카오 로그인
     implementation 'com.kakao.sdk:v2-user:2.10.0'
+    implementation "com.kakao.sdk:v2-user-rx:2.10.0"
     //horizontal picker
     implementation 'com.github.vikramezhil:WheelPicker:1.0.3'
     //YoutubePlayer

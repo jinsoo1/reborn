@@ -3,7 +3,7 @@ package com.reborn.reborn.base
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
-import org.koin.core.component.KoinComponent
+import org.koin.core.KoinComponent
 
 abstract class BaseViewModel : ViewModel(), KoinComponent {
 

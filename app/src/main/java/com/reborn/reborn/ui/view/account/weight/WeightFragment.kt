@@ -2,6 +2,8 @@ package com.reborn.reborn.ui.view.account.weight
 
 import android.util.Log
 import android.view.View
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.reborn.reborn.R
 import com.reborn.reborn.base.BaseVmFragment
 import com.reborn.reborn.databinding.FragmentWeightBinding
@@ -11,6 +13,8 @@ import com.reborn.reborn.ui.view.picker.PickerLayoutManager
 import com.reborn.reborn.ui.view.picker.ScreenUtils
 import com.reborn.reborn.util.EventObserver
 import kotlinx.android.synthetic.main.fragment_height.*
+import org.jetbrains.anko.support.v4.find
+import org.jetbrains.anko.support.v4.toast
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class WeightFragment : BaseVmFragment<FragmentWeightBinding>(
@@ -28,64 +32,33 @@ class WeightFragment : BaseVmFragment<FragmentWeightBinding>(
 
     override fun initFragment() {
 
-        setPicker()
-
-//        /*
-//         * for the below picker
-//         * */
-//
-//        numberPicker.value = 170
-//        numberPicker.minValue = 0
-//        numberPicker.setMaxValue(24)
-
         viewModel.setObserves()
 
     }
 
     fun WeightViewModel.setObserves(){
 
-        action.observe(viewLifecycleOwner, EventObserver{
+        action.observe(this@WeightFragment, EventObserver {
             when(it){
-                WeightViewModel.WeightActions.NEXT -> {
-                    activityViewModel.switchPageWeight()
-                    Log.d("다음", activityViewModel.nextState.value.toString())
-
+                WeightViewModel.WeightActions.NEXT ->{
+                    activityViewModel.setWeight(weight.value!!)
+                    findNavController().navigate(R.id.action_weightFragment_to_experienceFragment)
                 }
             }
         })
-    }
 
-    private fun setPicker(){
-
-        // Setting the padding such that the items will appear in the middle of the screen
-        val padding: Int = ScreenUtils.getScreenWidth(requireContext()) / 2 - ScreenUtils.dpToPx(requireContext(), 15)
-        binding.rvHorizontalPicker.setPadding(padding, 0, padding, 0)
-
-        // Setting layout manager
-        binding.rvHorizontalPicker.layoutManager = PickerLayoutManager(requireContext()).apply {
-            this.scrollToPosition(60)
-            callback = object : PickerLayoutManager.OnItemSelectedListener {
-                override fun onItemSelected(layoutPosition: Int) {
-                    sliderAdapter.setSelectedItem(layoutPosition)
-                    Log.d("selected text", data[layoutPosition])
-
+        setWeight.observe(this@WeightFragment, Observer {
+            if(it.isNotEmpty()){
+                val weight = it.toInt()
+                if(weight in 30..150){
+                    binding.numberPicker.value = weight
                 }
             }
-        }
+        })
 
-        // Setting Adapter
-        sliderAdapter = PickerAdapterWeight()
-        binding.rvHorizontalPicker.adapter = sliderAdapter.apply {
-            setData(data)
-            callback = object : PickerAdapterWeight.Callback {
-                override fun onItemClicked(view: View) {
-                    binding.rvHorizontalPicker.smoothScrollToPosition(
-                        binding.rvHorizontalPicker.getChildLayoutPosition(
-                            view
-                        )
-                    )
-                }
-            }
-        }
+        weight.observe(this@WeightFragment, Observer {
+            setWeight.value = it.toString()
+        })
     }
+
 }

@@ -1,6 +1,7 @@
 package com.reborn.reborn.ui.view.picker
 
 import android.content.Context
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +23,7 @@ class PickerLayoutManager(context: Context?) : LinearLayoutManager(context) {
 
     // snapping
     LinearSnapHelper().attachToRecyclerView(recyclerView)
+    scrollToPosition(170)
   }
 
   override fun onLayoutChildren(
@@ -39,7 +41,7 @@ class PickerLayoutManager(context: Context?) : LinearLayoutManager(context) {
   ): Int {
     return if (orientation == HORIZONTAL) {
       val scrolled = super.scrollHorizontallyBy(dx, recycler, state)
-      scaleDownView()
+      //scaleDownView()
       scrolled
     } else {
       0
@@ -73,7 +75,7 @@ class PickerLayoutManager(context: Context?) : LinearLayoutManager(context) {
       // Find the closest child to the recyclerView center --> this is the selected item.
       val recyclerViewCenterX = getRecyclerViewCenterX()
       var minDistance = recyclerView.width
-      var position = -1
+
       for (i in 0 until recyclerView.childCount) {
         val child = recyclerView.getChildAt(i)
         val childCenterX =
@@ -81,13 +83,38 @@ class PickerLayoutManager(context: Context?) : LinearLayoutManager(context) {
         val newDistance = abs(childCenterX - recyclerViewCenterX)
         if (newDistance < minDistance) {
           minDistance = newDistance
-          position = recyclerView.getChildLayoutPosition(child)
+          // Notify on item selection
+          Log.d("statestate", recyclerView.getChildLayoutPosition(child).toString())
+          callback?.onItemSelected(recyclerView.getChildLayoutPosition(child))
         }
       }
 
-      // Notify on item selection
-      callback?.onItemSelected(position)
     }
+  }
+
+  override fun scrollToPosition(position: Int) {
+    super.scrollToPosition(position)
+
+    // Find the closest child to the recyclerView center --> this is the selected item.
+    val recyclerViewCenterX = getRecyclerViewCenterX()
+    var minDistance = recyclerView.width
+    for (i in 0 until recyclerView.childCount) {
+      val child = recyclerView.getChildAt(i)
+      val childCenterX =
+        getDecoratedLeft(child) + (getDecoratedRight(child) - getDecoratedLeft(child)) / 2
+      val newDistance = abs(childCenterX - recyclerViewCenterX)
+      if (newDistance < minDistance) {
+        minDistance = newDistance
+        callback?.onItemSelected(recyclerView.getChildLayoutPosition(child))
+      }else{
+        // Notify on item selection
+        callback?.onItemSelected(position)
+      }
+    }
+
+
+
+    Log.d("statestate C : ", position.toString() )
   }
 
   private fun getRecyclerViewCenterX(): Int {

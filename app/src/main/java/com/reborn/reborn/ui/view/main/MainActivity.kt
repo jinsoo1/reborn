@@ -2,12 +2,16 @@ package com.reborn.reborn.ui.view.main
 
 import android.os.Bundle
 import android.util.Log
+import androidx.lifecycle.Observer
 import com.kakao.sdk.common.util.Utility
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.reborn.reborn.R
+import com.reborn.reborn.base.BaseRecyclerAdapter
 import com.reborn.reborn.base.BaseVmActivity
+import com.reborn.reborn.data.common.model.MainSearch
 import com.reborn.reborn.databinding.ActivityMainBinding
+import com.reborn.reborn.databinding.ItemSearchResultBinding
 import com.reborn.reborn.ui.view.main.search.SearchResultActivity
 import com.reborn.reborn.util.EventObserver
 import com.reborn.reborn.util.KeepStateNavigator
@@ -39,9 +43,14 @@ class MainActivity : BaseVmActivity<ActivityMainBinding>(
         binding.navBottom.setupWithNavController(navController)
 
         binding.imageviewSdsd.setOnClickListener {
-            startActivity(
-                intentFor<SearchResultActivity>()
-            )
+            if(viewModel.searchQuery.value!!.isNotEmpty()){
+                startActivity(
+                    intentFor<SearchResultActivity>(
+                        "searchState" to false,
+                        "searchData" to viewModel.searchQuery.value
+                    )
+                )
+            }
             overridePendingTransition(R.anim.fadein,R.anim.fadeout)
         }
 
@@ -49,6 +58,12 @@ class MainActivity : BaseVmActivity<ActivityMainBinding>(
     }
 
     override fun initActivity() {
+
+        binding.apply {
+            rvSearch.apply {
+                adapter = SearchAdapter(viewModel)
+            }
+        }
 
         viewModel.setObserves()
 
@@ -69,19 +84,29 @@ class MainActivity : BaseVmActivity<ActivityMainBinding>(
             }
         })
 
+        searchQuery.observe(this@MainActivity, Observer {
+            if(it.isNotEmpty()){
+                mainSearch()
+            }else{
+                searchGone()
+            }
+        })
+
+        selectItem.observe(this@MainActivity, Observer {
+            startActivity(
+                intentFor<SearchResultActivity>(
+                    "searchState" to true,
+                    "searchData" to it.title,
+                    "selectToken" to it.token,
+                    "selectType" to it.type
+                )
+            )
+        })
+
     }
-
-
-//    override fun onBackPressed() {
-//
-//        if(System.currentTimeMillis() - waitTime >= 2000){
-//            waitTime = System.currentTimeMillis();
-//            toast("한번더 누르면 종료됩니다.")
-//
-//        } else if(System.currentTimeMillis() - waitTime < 2000 ){
-//
-//            finish();
-//        }
-//
-//    }
 }
+
+
+class SearchAdapter(vm : MainViewModel) : BaseRecyclerAdapter<MainSearch, ItemSearchResultBinding>(
+    R.layout.item_search_result, vm
+)

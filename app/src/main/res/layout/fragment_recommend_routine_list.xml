@@ -1,53 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.reborn.reborn.ui.view.recommend.RoutineListViewModel" />
+
+        <import type="android.view.View" />
 
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:background="@color/primary"
-        android:elevation="8dp"
-        android:gravity="center"
-        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@color/primary"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/recommend_routine_list"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="22dp"/>
+
+        </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tv_routine"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/recommend_routine_list"
             android:fontFamily="@font/poppins_bold"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="22dp"/>
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:textColor="@color/black"
-        android:text="@string/recommend_routine_list_title"
-        android:textSize="22dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"/>
+            android:textColor="@color/black"
+            android:text="@string/recommend_routine_list_title"
+            android:textSize="22dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_title"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_routine_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginTop="20dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            bindRecommendRoutine="@{vm.routineList}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_routine"
+            app:layout_constraintBottom_toTopOf="@+id/tv_bottom"
+            />
 
         <TextView
+            android:id="@+id/tv_bottom"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:background="@color/primary"
@@ -57,8 +83,22 @@
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_bold"
             android:textSize="22dp"
+            android:onClick="@{() -> vm.saveRoutine()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
            />
 
-    </LinearLayout>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{vm.isLoading == true ? View.VISIBLE : View.GONE}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

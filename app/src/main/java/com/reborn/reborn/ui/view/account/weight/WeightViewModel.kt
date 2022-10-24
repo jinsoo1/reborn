@@ -11,6 +11,10 @@ class WeightViewModel(
 
     val action: MutableLiveData<Event<WeightActions>> = MutableLiveData()
 
+    private val _weight : MutableLiveData<Int> = MutableLiveData(60)
+    val weight : MutableLiveData<Int> get() = _weight
+
+    var setWeight : MutableLiveData<String> = MutableLiveData()
 
     fun nextExperience(){
         action.value = Event(WeightActions.NEXT)

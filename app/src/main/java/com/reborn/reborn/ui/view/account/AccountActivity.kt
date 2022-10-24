@@ -1,6 +1,10 @@
 package com.reborn.reborn.ui.view.account
 
 import android.util.Log
+import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.reborn.reborn.R
 import com.reborn.reborn.base.BaseVmActivity
 import com.reborn.reborn.databinding.ActivityAccountBinding
@@ -9,8 +13,10 @@ import com.reborn.reborn.ui.view.account.experience.ExperienceFragment
 import com.reborn.reborn.ui.view.account.height.HeightFragment
 import com.reborn.reborn.ui.view.account.terms.TermsFragment
 import com.reborn.reborn.ui.view.account.weight.WeightFragment
+import com.reborn.reborn.ui.view.assessment.AssessmentActivity
 import com.reborn.reborn.util.EventObserver
 import com.reborn.reborn.util.FragmentUtils
+import org.jetbrains.anko.intentFor
 
 class AccountActivity : BaseVmActivity<ActivityAccountBinding>(
 R.layout.activity_account,
@@ -20,27 +26,7 @@ AccountViewModel::class.java
 
     override val toolbarId: Int = 0
 
-    private val heightFragment: HeightFragment by lazy { HeightFragment() }
-    private val weightFragment: WeightFragment by lazy { WeightFragment() }
-    private val experienceFragment: ExperienceFragment by lazy { ExperienceFragment() }
-    private val termsFragment: TermsFragment by lazy { TermsFragment() }
-
-    private val fragments: FragmentUtils by lazy {
-        FragmentUtils(
-            R.id.fragment_container,
-            supportFragmentManager,
-            arrayOf(
-                heightFragment,
-                weightFragment,
-                experienceFragment,
-                termsFragment
-            )
-        )
-    }
-
     override fun initActivity() {
-
-        switchPage(0)
 
         viewModel.setObserves()
     }
@@ -48,30 +34,23 @@ AccountViewModel::class.java
     fun AccountViewModel.setObserves(){
 
         action.observe(this@AccountActivity, EventObserver{
-            when(it) {
-                AccountViewModel.AccountAction.REPLACE_PAGE_HEIGHT -> {
-                    switchPage(1)
-                }
 
-                AccountViewModel.AccountAction.REPLACE_PAGE_WEIGHT -> {
-                    switchPage(2)
+            when(it){
+                AccountViewModel.AccountAction.SUCCESS ->{
+                    startActivity(
+                        intentFor<AssessmentActivity>()
+                    )
+                   finish()
                 }
-
-                AccountViewModel.AccountAction.REPLACE_PAGE_EXPERIENCE -> {
-                    switchPage(3)
-                    Log.d("다음", "약관동의 페이지로 넘어감 ! ")
-                }
-
             }
+
+        })
+
+        terms.observe(this@AccountActivity, Observer {
+            if (it == 1) uploadMyAccount()
         })
     }
 
-    private fun switchPage(pageIndex: Int) {
-        if (pageIndex < fragments.fragmentCount) {
-
-            fragments.setCurrentFragmentByPosition(pageIndex)
-        }
-    }
 }
 
 

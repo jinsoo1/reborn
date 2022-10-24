@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -9,19 +10,24 @@
         <import type="android.view.View" />
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/layout_title"
             android:layout_width="match_parent"
             android:layout_height="130dp"
             android:background="@color/primary"
             android:elevation="8dp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
 
             <TextView
                 android:layout_width="match_parent"
@@ -45,6 +51,7 @@
 
 
         <TextView
+            android:id="@+id/tv_static"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
@@ -52,8 +59,13 @@
             android:text="@string/static_title"
             android:textSize="22dp"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_title"
+            />
         <TextView
+            android:id="@+id/tv_static2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
@@ -61,15 +73,302 @@
             android:text="@string/static_vas_title"
             android:textSize="22dp"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_static"
+            />
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_static2"
+            app:layout_constraintBottom_toTopOf="@+id/layout_prev_next"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_pain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_pain5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9~10단계:EXCRUCIATING PAIN"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:elevation="1dp"
+                    android:layout_marginTop="-5dp"
+                    android:visibility="@{vm.num.equals(9) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/iv_painline5"
+                    app:layout_constraintTop_toBottomOf="@id/iv_painline5"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2_pain5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="참을 수 없는 통증으로 대화조차 어려움"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:elevation="1dp"
+                    android:visibility="@{vm.num.equals(9) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/tv_pain5"
+                    app:layout_constraintTop_toBottomOf="@id/tv_pain5"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_painline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:visibility="@{vm.num.equals(9) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/iv_pain5"
+                    app:layout_constraintEnd_toEndOf="@id/iv_pain5"
+                    app:layout_constraintTop_toTopOf="@id/iv_pain5"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_pain5"
+                    android:src="@drawable/ic_painline5"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_pain5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:onClick="@{() -> vm.setNum(9)}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/iv_pain4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_pain5"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_pain4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7~8단계:HORRIBBLE PAIN"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:elevation="1dp"
+                    android:layout_marginTop="-5dp"
+                    android:visibility="@{vm.num.equals(7) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/iv_painline4"
+                    app:layout_constraintTop_toBottomOf="@id/iv_painline4"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2_pain4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="참을 수 없는 통증으로 일상생활이 어려움"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:elevation="1dp"
+                    android:visibility="@{vm.num.equals(7) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/tv_pain4"
+                    app:layout_constraintTop_toBottomOf="@id/tv_pain4"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_painline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:visibility="@{vm.num.equals(7) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/iv_pain4"
+                    app:layout_constraintEnd_toEndOf="@id/iv_pain4"
+                    app:layout_constraintTop_toTopOf="@id/iv_pain4"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_pain4"
+                    android:src="@drawable/ic_painline4"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_pain4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:onClick="@{() -> vm.setNum(7)}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_pain5"
+                    android:src="@drawable/ic_pain4"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_pain3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5~6단계:SEVERE PAIN"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:elevation="1dp"
+                    android:layout_marginTop="-5dp"
+                    android:visibility="@{vm.num.equals(5) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/iv_painline3"
+                    app:layout_constraintTop_toBottomOf="@id/iv_painline3"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2_pain3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="참기 힘든 통증으로 집중을 어렵게 함\n(TV, 독서, 대화, 가벼운 운동 등)"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:elevation="1dp"
+                    android:visibility="@{vm.num.equals(5) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/tv_pain3"
+                    app:layout_constraintTop_toBottomOf="@id/tv_pain3"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_painline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:visibility="@{vm.num.equals(5) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/iv_pain3"
+                    app:layout_constraintEnd_toEndOf="@id/iv_pain3"
+                    app:layout_constraintTop_toTopOf="@id/iv_pain3"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_pain3"
+                    android:src="@drawable/ic_painline3"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_pain3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:onClick="@{() -> vm.setNum(5)}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_pain4"
+                    android:src="@drawable/ic_pain3"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_pain2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3~4단계:MODERATE PAIN"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:elevation="1dp"
+                    android:layout_marginTop="-5dp"
+                    android:visibility="@{vm.num.equals(3) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/iv_painline2"
+                    app:layout_constraintTop_toBottomOf="@id/iv_painline2"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2_pain2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="참을 수 있는 통증이나 집중을 어렵게 함\n(TV, 독서, 대화, 가벼운 운동 등)"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:elevation="1dp"
+                    android:visibility="@{vm.num.equals(3) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/tv_pain2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_pain2"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_painline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:visibility="@{vm.num.equals(3) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/iv_pain2"
+                    app:layout_constraintEnd_toEndOf="@id/iv_pain2"
+                    app:layout_constraintTop_toTopOf="@id/iv_pain2"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_pain2"
+                    android:src="@drawable/ic_painline2"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_pain2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:onClick="@{() -> vm.setNum(3)}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_pain3"
+                    android:src="@drawable/ic_pain2"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_pain1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1~2단계:MILD PAIN"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:elevation="1dp"
+                    android:layout_marginTop="-5dp"
+                    android:visibility="@{vm.num.equals(1) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/iv_painline1"
+                    app:layout_constraintTop_toBottomOf="@id/iv_painline1"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2_pain1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="약간의 통증 혹은 불편감은 있으나 일상생활에 문제 없음"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:elevation="1dp"
+                    android:visibility="@{vm.num.equals(1) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/tv_pain1"
+                    app:layout_constraintTop_toBottomOf="@id/tv_pain1"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_painline1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:visibility="@{vm.num.equals(1) ? View.VISIBLE : View.INVISIBLE}"
+                    app:layout_constraintStart_toStartOf="@id/iv_pain1"
+                    app:layout_constraintEnd_toEndOf="@id/iv_pain1"
+                    app:layout_constraintTop_toTopOf="@id/iv_pain1"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_pain1"
+                    android:src="@drawable/ic_painline1"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_pain1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:onClick="@{() -> vm.setNum(1)}"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_pain2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_pain1"
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
         <LinearLayout
+            android:id="@+id/layout_prev_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="5dp"
-            android:layout_weight="1"
-            android:gravity="center">
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_stop"
+            >
 
             <TextView
                 android:layout_width="100dp"
@@ -95,7 +394,7 @@
                 android:textColor="@color/white"
                 android:textSize="16dp"
                 android:gravity="center"
-                android:onClick="@{() -> vm.prev()}"
+                android:onClick="@{() -> vm.next()}"
                 android:background="@drawable/btn_next_primary"/>
 
 
@@ -103,6 +402,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_stop"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:background="@color/primary"
@@ -112,8 +412,12 @@
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_bold"
             android:textSize="22dp"
-            android:onClick="@{() -> vm.stop()}"/>
+            android:onClick="@{() -> vm.stop()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -1,12 +1,12 @@
 package com.reborn.reborn.ui.binding
 
-import android.util.Log
 import androidx.databinding.BindingAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.reborn.reborn.R
 import com.reborn.reborn.data.common.model.ExerciseList
+import com.reborn.reborn.ui.view.assessment.rehab.SpotLocation
+import com.reborn.reborn.ui.view.assessment.rehab.SpotViewPagerAdapter
+
 import com.reborn.reborn.util.FeedbackPagerAdapter
-import com.reborn.reborn.util.ImagePagerAdapter
 
 @BindingAdapter(value = ["bindFeedbackToPager"], requireAll = true)
 fun ViewPager2.bindFeedbackToPager(item: List<ExerciseList>?) {
@@ -21,3 +21,14 @@ fun ViewPager2.bindFeedbackToPager(item: List<ExerciseList>?) {
     }
 
 }
+
+
+//
+//@BindingAdapter(value= ["bindSpotToPager"], requireAll = true)
+//fun ViewPager2.bindSpotToPager(spot : List<SpotLocation>){
+//    if(this.adapter == null){
+//        this.adapter = SpotViewPagerAdapter(spot)
+//    }
+//    this.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+//    (adapter as SpotViewPagerAdapter?)?.updateItems(spot)
+//}

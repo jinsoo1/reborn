@@ -14,7 +14,7 @@ buildscript{
     ext.rxadapter = '2.9.0'
 
 
-    ext.koin = "2.2.0"
+    ext.koin = "2.1.5"
     ext.okhttp = '4.3.1'
     ext.retrofit2 = '2.7.1'
     ext.gson = "2.8.9"

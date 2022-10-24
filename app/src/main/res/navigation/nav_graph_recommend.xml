@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_recommend"
+    app:startDestination="@id/routineListFragment2">
+
+    <fragment
+        android:id="@+id/routineListFragment2"
+        android:name="com.reborn.reborn.ui.view.recommend.RoutineListFragment"
+        android:label="RoutineListFragment" >
+        <action
+            android:id="@+id/action_routineListFragment2_to_routinePreviewFragment"
+            app:destination="@id/routinePreviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/routinePreviewFragment"
+        android:name="com.reborn.reborn.ui.view.recommend.RoutinePreviewFragment"
+        android:label="RoutinePreviewFragment" >
+        <argument
+            android:name="routineToken"
+            app:argType="string"
+            />
+    </fragment>
+</navigation>

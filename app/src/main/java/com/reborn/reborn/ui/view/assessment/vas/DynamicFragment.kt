@@ -1,18 +1,18 @@
 package com.reborn.reborn.ui.view.assessment.vas
 
+import android.util.Log
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.reborn.reborn.R
 import com.reborn.reborn.base.BaseVmFragment
 import com.reborn.reborn.databinding.FragmentDynamicBinding
 import com.reborn.reborn.ui.view.assessment.AssessmentViewModel
-import com.reborn.reborn.ui.view.assessment.rehab.SpotLocationViewModel
 import com.reborn.reborn.util.EventObserver
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 
 class DynamicFragment: BaseVmFragment<FragmentDynamicBinding>(
-    R.layout.fragment_static,
+    R.layout.fragment_dynamic,
     DynamicViewModel::class.java
 ) {
 
@@ -29,16 +29,19 @@ class DynamicFragment: BaseVmFragment<FragmentDynamicBinding>(
         action.observe(viewLifecycleOwner, EventObserver {
             when (it) {
                 DynamicViewModel.DynamicActions.PREV -> {
-                    activityViewModel.staticPrev()
+                    requireActivity().onBackPressed()
                 }
                 DynamicViewModel.DynamicActions.NEXT -> {
-                    val action = DynamicFragmentDirections.actionDynamicFragmentToAnalysisProgressFragment()
-                    findNavController().navigate(action)
+                    activityViewModel.complete()
                 }
                 DynamicViewModel.DynamicActions.STOP -> {
                     activityViewModel.finish()
                 }
             }
+        })
+
+        num.observe(this@DynamicFragment, Observer{
+            activityViewModel.dynamicData.value = it
         })
     }
 

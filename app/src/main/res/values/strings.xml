@@ -148,6 +148,11 @@
     <string name="recommend_routine_preview">번 운동 루틴 미리보기</string>
     <string name="recommend_routine_preview_title">진행될 운동들을 확인하세요!</string>
 
+    <string name="name_empty"></string>
+
+    <string name="result_search">%s(%s)</string>
+
+
 
 
 

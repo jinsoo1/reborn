@@ -193,9 +193,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_next"
             android:layout_width="310dp"
             android:layout_height="50dp"
-            android:background="@drawable/btn_next_primary_radius_7dp"
+            android:background="@{vm.btnState == true ? @drawable/btn_next_primary_radius_7dp : @drawable/btn_next_gray_radius_7dp}"
             android:elevation="4dp"
             android:text="@string/next"
             android:fontFamily="@font/poppins_bold"

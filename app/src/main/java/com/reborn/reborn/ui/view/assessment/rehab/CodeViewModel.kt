@@ -9,6 +9,14 @@ class CodeViewModel : BaseViewModel() {
 
     val action: MutableLiveData<Event<CodeActions>> = MutableLiveData()
 
+    private val _codeText : MutableLiveData<String> = MutableLiveData("")
+    val codeText : MutableLiveData<String> get() = _codeText
+
+    val typeState: MutableLiveData<Boolean> = MutableLiveData(false) //true이면 없음, false이면 있음
+
+    private val _btnState : MutableLiveData<Boolean> = MutableLiveData(false)
+    val btnState  : MutableLiveData<Boolean> get() = _btnState
+
     fun next(){
         action.value = Event(CodeActions.NEXT)
     }

@@ -10,7 +10,7 @@ interface BDPreferences {
         var nickname: String
         var email: String
         var profileImg: String
-        var bio: String
+        var agree : Boolean
 
 
         var noticeCreated : String

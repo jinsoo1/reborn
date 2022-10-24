@@ -9,7 +9,7 @@ import com.reborn.reborn.databinding.FragmentHomeBinding
 import com.reborn.reborn.databinding.ItemBestExerciseBinding
 import com.reborn.reborn.databinding.ItemBestFeedBinding
 import com.reborn.reborn.ui.view.assessment.AssessmentActivity
-import com.reborn.reborn.ui.view.myroutine.MyRoutineActivity
+import com.reborn.reborn.ui.view.recommend.RecommendActivity
 import com.reborn.reborn.util.EventObserver
 import org.jetbrains.anko.support.v4.intentFor
 
@@ -34,7 +34,7 @@ class HomeFragment : BaseVmFragment<FragmentHomeBinding>(
             testLayout.apply {
                 setOnClickListener {
                     startActivity(
-                        intentFor<MyRoutineActivity>()
+                        intentFor<RecommendActivity>()
                     )
                 }
             }

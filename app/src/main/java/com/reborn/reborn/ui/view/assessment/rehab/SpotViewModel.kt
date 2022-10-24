@@ -17,7 +17,11 @@ class SpotViewModel: BaseViewModel() {
         action.value = Event(SpotActions.STOP)
     }
 
+    fun next(){
+        action.value = Event(SpotActions.NEXT)
+    }
+
     enum class SpotActions {
-        PREV, STOP
+        PREV, STOP, NEXT
     }
 }
