@@ -22,18 +22,13 @@ class HomeViewModel : BaseViewModel() {
     private val _todayBestExercise : MutableLiveData<List<TodayBestExercise>> = MutableLiveData(listOf())
     val todayBestExercise : LiveData<List<TodayBestExercise>> get() = _todayBestExercise
 
-    private val _todayBaseFeed : MutableLiveData<List<TodayBestFeed>> = MutableLiveData(listOf())
-    val todayBestFeed : LiveData<List<TodayBestFeed>> get() = _todayBaseFeed
-
 
     init {
 
         viewModelScope.launch {
             val bestExercise = async {  getTodayBestExercise() }
-            val bestFeed = async {  getTodayBastFeed() }
 
             bestExercise.await()
-            bestFeed.await()
         }
 
     }
@@ -54,20 +49,6 @@ class HomeViewModel : BaseViewModel() {
 
     }
 
-    private fun getTodayBastFeed(){
-        val itemList : MutableList<TodayBestFeed> = mutableListOf()
-
-        itemList.add(TodayBestFeed("first", "kgl5389", "03:01:23","123"))
-        itemList.add(TodayBestFeed("second", "kjs9305", "02:51:42","456"))
-        itemList.add(TodayBestFeed("third", "ksh2323", "01:42:20","789"))
-        itemList.add(TodayBestFeed("fourth", "kmr8785", "04:20:45","124"))
-        itemList.add(TodayBestFeed("fifth", "yyj7752", "03:34:23","457"))
-
-        _todayBaseFeed.value = itemList
-
-    }
-
-
     fun addAssessment(){
         _action.value = Event(HomeAction.ASSESSMENT)
     }
@@ -83,15 +64,6 @@ class HomeViewModel : BaseViewModel() {
         @BindingAdapter("bindBestExercise")
         fun bindBestExercise(rv : RecyclerView, list : List<TodayBestExercise>){
             val adapter = rv.adapter as TodayBestExerciseAdapter
-            adapter.let {
-                it.updateItems(list)
-            }
-        }
-
-        @JvmStatic
-        @BindingAdapter("bindBestFeed")
-        fun bindBestFeed(rv : RecyclerView, list : List<TodayBestFeed>){
-            val adapter = rv.adapter as TodayBestFeedAdapter
             adapter.let {
                 it.updateItems(list)
             }

@@ -35,6 +35,7 @@
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_exercise_list.xml" value="0.19322916666666667" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_experience.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_height.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_history.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_home.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_information.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/fragment_mypage.xml" value="0.36614583333333334" />
@@ -53,6 +54,9 @@
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_feedback.xml" value="0.1875" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_horizontal_picker.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_image_list.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_list_myroutine.xml" value="0.1875" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_myroutine_list.xml" value="0.1875" />
+        <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_myroutinelist.xml" value="0.19322916666666667" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_recommend_routine_list.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_recyclerview.xml" value="0.358695652173913" />
         <entry key="..\:/Users/i5-4690/AndroidStudioProjects/reborn/app/src/main/res/layout/item_routine_exercise.xml" value="0.2" />

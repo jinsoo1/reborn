@@ -5,8 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.reborn.reborn.base.BaseViewModel
 import com.reborn.reborn.data.common.model.ExerciseList
-import com.reborn.reborn.data.common.model.RoutineList
-import com.reborn.reborn.ui.view.myroutine.routinelist.RoutineListAdapter
 import com.reborn.reborn.util.Event
 
 class ExerciseListViewModel : BaseViewModel() {

@@ -6,6 +6,7 @@ import com.reborn.reborn.R
 import com.reborn.reborn.base.BaseVmActivity
 import com.reborn.reborn.databinding.ActivityAnalysisProgressBinding
 import com.reborn.reborn.ui.view.main.MainActivity
+import com.reborn.reborn.ui.view.recommend.RecommendActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.jetbrains.anko.toast
@@ -36,7 +37,7 @@ class ProgressActivity : BaseVmActivity<ActivityAnalysisProgressBinding>(
                 else if (progress == 90){
                     binding.tvProgress.text = "홍길동님의 맞춤 운동 완료"
                 } else if(progress == 100) {
-                    val intent = Intent(this@ProgressActivity, MainActivity::class.java)
+                    val intent = Intent(this@ProgressActivity, RecommendActivity::class.java)
                     startActivity(intent)
                     finish()
                 }

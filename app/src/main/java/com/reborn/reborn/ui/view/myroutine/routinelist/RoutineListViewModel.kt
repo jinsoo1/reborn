@@ -32,7 +32,7 @@ class RoutineListViewModel : BaseViewModel() {
     }
 
 
-    fun setActionData(item : RoutineList){
+    fun actionData(item : RoutineList){
         _actionData.value = Event(item)
     }
 

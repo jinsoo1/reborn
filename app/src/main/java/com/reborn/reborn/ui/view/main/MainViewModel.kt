@@ -7,11 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.reborn.reborn.base.BaseViewModel
 import com.reborn.reborn.data.common.model.MainSearch
-import com.reborn.reborn.data.common.model.TodayBestExercise
-import com.reborn.reborn.data.common.model.TodayBestFeed
 import com.reborn.reborn.data.remote.source.SearchDataSource
-import com.reborn.reborn.ui.view.main.home.TodayBestExerciseAdapter
-import com.reborn.reborn.ui.view.main.home.TodayBestFeedAdapter
 import com.reborn.reborn.util.Event
 import io.reactivex.rxkotlin.addTo
 

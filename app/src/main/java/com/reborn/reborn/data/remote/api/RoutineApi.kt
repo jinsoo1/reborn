@@ -1,7 +1,9 @@
 package com.reborn.reborn.data.remote.api
 
+import com.reborn.reborn.data.common.model.MyRoutineList
 import com.reborn.reborn.data.remote.model.DataResponse
 import com.reborn.reborn.data.remote.model.VoidResponse
+import com.reborn.reborn.data.remote.model.response.MyRoutineListResponse
 import com.reborn.reborn.data.remote.model.response.RoutineExerciseResponse
 import com.reborn.reborn.data.remote.model.response.RoutineResponse
 import io.reactivex.Single
@@ -24,5 +26,8 @@ interface RoutineApi {
         @Field("routineToken") routineToken: String,
         @Field("totalTime") totalTime: Int
     ) : Single<VoidResponse>
+
+    @GET("/routine/myRoutine")
+    fun myRoutineList() : Single<DataResponse<List<MyRoutineListResponse>>>
 
 }

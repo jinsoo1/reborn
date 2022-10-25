@@ -30,14 +30,12 @@
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/test_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_rounded_10dp_stroke_gray_bbb"
                     android:elevation="3dp"
                     android:orientation="vertical"
                     android:padding="10dp"
-
                     >
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -57,6 +55,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/tv_all_routine"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="전체보기 >"
@@ -100,6 +99,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="50dp"
                         android:background="@drawable/bg_rounded_10dp_stroke_gray_bbb"
+                        android:onClick="@{() -> vm.addAssessment()}"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -149,36 +149,6 @@
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="30dp"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:text="@string/feed_today_best"
-                        android:layout_marginStart="10dp"
-                        />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_best_feed"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:overScrollMode="never"
-                        bind:bindBestFeed="@{vm.todayBestFeed}"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
 
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.core.widget.NestedScrollView>

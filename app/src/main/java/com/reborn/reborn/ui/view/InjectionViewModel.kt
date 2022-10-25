@@ -54,7 +54,7 @@ val viewModelModule = module {
     viewModel { ProfileViewModel() }
     viewModel { InformationViewModel(get()) }
     viewModel { BookmarkViewModel() }
-    viewModel { HistoryViewModel() }
+    viewModel { HistoryViewModel(get()) }
 
 
     //Related 관련

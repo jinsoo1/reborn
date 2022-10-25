@@ -10,6 +10,7 @@
     <string name="exercise_today_best">오늘의 베스트 운동</string>
     <string name="feed_today_best">오늘의 베스트 피드</string>
     <string name="exercise_move">운동 보러가기></string>
+    <string name="nickname_main">%s님 환영합니다.</string>
 
     <string name="native_app_key">b5cce02d691dc3b8070098c2dbece43e</string>
 

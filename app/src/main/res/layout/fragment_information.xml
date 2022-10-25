@@ -49,6 +49,7 @@
                     android:padding="15dp"
                     android:hint="@string/information_gender"
                     android:text="@{vm.userInfo.gender.equals(`null`) ? @string/name_empty : vm.userInfo.gender}"
+                    android:onClick="@{() -> vm.genderAction()}"
                     android:textSize="18dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"

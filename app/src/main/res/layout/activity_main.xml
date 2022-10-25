@@ -10,6 +10,8 @@
 
         <import type="android.view.View" />
 
+        <import type="com.reborn.reborn.data.local.pref.PreferencesController"/>
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,36 +32,29 @@
             app:layout_constraintTop_toTopOf="parent"
             >
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:padding="14dp"
                 android:layout_weight="8"
                 android:orientation="vertical"
+                android:gravity="center"
                 android:weightSum="3"
                 >
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exercise_empty_list"
-                    android:textSize="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/nickname_main(PreferencesController.INSTANCE.userInfoPref.nickname)}"
+                    android:textSize="20dp"
                     android:textColor="@color/white"
-                    />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
                     android:textStyle="bold"
-                    android:text="@string/exercise_add"
-                    android:textSize="17dp"
-                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     />
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="0dp"

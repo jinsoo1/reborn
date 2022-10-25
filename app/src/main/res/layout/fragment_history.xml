@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <variable
+            name="vm"
+            type="com.reborn.reborn.ui.view.main.myPage.history.HistoryViewModel" />
 
     </data>
 
@@ -12,12 +15,15 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_my_routine"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            bindMyRoutine="@{vm.myRoutine}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

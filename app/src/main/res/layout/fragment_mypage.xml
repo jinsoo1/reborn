@@ -4,6 +4,10 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.reborn.reborn.ui.view.main.myPage.MyPageViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,6 +35,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="@color/grey_bbb"
+            android:onClick="@{() -> vm.logoutAction()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

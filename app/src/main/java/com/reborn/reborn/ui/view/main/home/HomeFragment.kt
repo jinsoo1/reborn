@@ -27,11 +27,8 @@ class HomeFragment : BaseVmFragment<FragmentHomeBinding>(
                 adapter = TodayBestExerciseAdapter(viewModel)
             }
 
-            rvBestFeed.apply {
-                adapter = TodayBestFeedAdapter(viewModel)
-            }
 
-            testLayout.apply {
+            tvAllRoutine.apply {
                 setOnClickListener {
                     startActivity(
                         intentFor<RecommendActivity>()
@@ -68,8 +65,3 @@ class HomeFragment : BaseVmFragment<FragmentHomeBinding>(
 class TodayBestExerciseAdapter(vm : HomeViewModel) : BaseRecyclerAdapter<TodayBestExercise, ItemBestExerciseBinding>(
             R.layout.item_best_exercise, vm
 )
-
-class TodayBestFeedAdapter(vm : HomeViewModel): BaseRecyclerAdapter<TodayBestFeed, ItemBestFeedBinding>(
-            R.layout.item_best_feed, vm
-)
-
