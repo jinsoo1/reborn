@@ -157,8 +157,8 @@ dependencies {
     //구글 로그인
     implementation 'com.shobhitpuri.custombuttons:google-signin:1.1.0'
     //카카오 로그인
-    implementation 'com.kakao.sdk:v2-user:2.10.0'
-    implementation "com.kakao.sdk:v2-user-rx:2.10.0"
+    implementation 'com.kakao.sdk:v2-user:2.11.2'
+    implementation "com.kakao.sdk:v2-user-rx:2.11.2"
     //horizontal picker
     implementation 'com.github.vikramezhil:WheelPicker:1.0.3'
     //YoutubePlayer

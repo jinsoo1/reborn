@@ -46,11 +46,9 @@ class CompleteFragment : BaseVmFragment<FragmentCompleteBinding>(
             }
         })
 
-
     }
 
 }
-
 
 class CompleteExerciseAdapter(vm : CompleteViewModel) : BaseRecyclerAdapter<ExerciseList, ItemCompleteExerciseBinding>(
     R.layout.item_complete_exercise, vm
@@ -64,6 +62,5 @@ class CompleteExerciseAdapter(vm : CompleteViewModel) : BaseRecyclerAdapter<Exer
             tvPosition.text = "$position. "
 
         }
-
     }
 }

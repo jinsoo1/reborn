@@ -207,8 +207,10 @@ class LoginActivity : BaseVmActivity<ActivityLoginBinding>(
                     authDataSource
                         .loginByGoogle(account.id ?: "", account.email ?: "")
                         .subscribe({
+                            Log.d("GoogleAccount", it.toString())
                             onLoginSuccess(it)
                         },{
+                            Log.d("GoogleAccount", it.toString())
                             it.printStackTrace()
                         })
                         .addTo(viewModel.compositeDisposable)
